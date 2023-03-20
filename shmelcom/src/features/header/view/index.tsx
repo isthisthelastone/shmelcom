@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import React, { Fragment } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import { Disclosure } from '@headlessui/react';
 import { Flex } from '../../../shared/ui';
 import {
   SearchIcon,
@@ -21,10 +20,6 @@ const navigation = [
   { name: 'Extras', href: '#', current: false },
   { name: 'ShmelFarms', href: '#', current: false },
 ];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export function Header() {
   return (
