@@ -3,10 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: [
-		'plugin:react/recommended',
-		'xo',
-	],
+	extends: ['plugin:react/recommended', 'xo'],
 	overrides: [
 		{
 			extends: [
@@ -16,10 +13,7 @@ module.exports = {
 				'xo-typescript',
 				'plugin:prettier/recommended',
 			],
-			files: [
-				'*.ts',
-				'*.tsx',
-			],
+			files: ['*.ts', '*.tsx'],
 		},
 	],
 	parserOptions: {
@@ -27,13 +21,6 @@ module.exports = {
 		sourceType: 'module',
 		project: './tsconfig.json',
 	},
-	plugins: [
-		'react',
-		'@typescript-eslint',
-		'prettier',
-	],
-	rules: {
-		'react/react-in-jsx-scope': 0,
-		'import/prefer-default-export': 0,
-	},
+	plugins: ['react', '@typescript-eslint', 'prettier'],
+	rules: {},
 };
