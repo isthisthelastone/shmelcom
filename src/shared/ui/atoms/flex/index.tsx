@@ -2,5 +2,5 @@
 import styled, { type StyledComponent } from 'styled-components';
 
 export const Flex: StyledComponent<'div', any> = styled.div`
-  display: flex;
+	display: flex;
 `;
