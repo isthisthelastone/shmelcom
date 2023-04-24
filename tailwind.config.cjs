@@ -12,6 +12,7 @@ module.exports = {
 			weedGreen: '#819685',
 			main: '#3F3F3F',
 			black: '#000',
+			white: '#fff',
 		},
 		extend: {},
 	},

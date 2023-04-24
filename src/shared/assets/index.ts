@@ -13,6 +13,7 @@ import { ReactComponent as ChinaFlag } from './icons/china-circular.svg';
 import { ReactComponent as USAFlag } from './icons/usa-circular.svg';
 import { ReactComponent as ThaiFlag } from './icons/thailand-circular.svg';
 import { ReactComponent as IsraelFlag } from './icons/israel-circular.svg';
+import { ReactComponent as ShopIcon } from './icons/shop-icon.svg';
 
 export {
 	SearchIcon,
@@ -29,4 +30,5 @@ export {
 	USAFlag,
 	ThaiFlag,
 	IsraelFlag,
+	ShopIcon,
 };

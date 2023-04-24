@@ -2,8 +2,13 @@
 
 import React from 'react';
 
-import { WorldWide } from '../../../entities';
+import { WorldWide, Arrivals } from '../../../entities';
 
 export function Body() {
-	return <WorldWide />;
+	return (
+		<>
+			<WorldWide />
+			<Arrivals />
+		</>
+	);
 }
