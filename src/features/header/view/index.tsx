@@ -27,8 +27,8 @@ const navigation = [
 
 export function Header() {
 	return (
-		<Flex className="flex-col border-b-[3px] border-black border-opacity-20 pb-[2rem]">
-			<Flex className="pt-[100px] pl-[100px] gap-[250px]">
+		<Flex className="flex-col border-b-[3px]  border-black border-opacity-20 pb-[2rem]">
+			<Flex className="pt-[100px] pl-[50px] gap-[300px]">
 				<Flex className="gap-[40px]">
 					<SearchIcon />
 					<MoonIcon />
@@ -36,7 +36,7 @@ export function Header() {
 				<Flex>
 					<ShmelIcon />
 				</Flex>
-				<Flex className="gap-[40px] ">
+				<Flex className=" gap-[40px] ">
 					<ProfileIcon />
 					<CartIcon />
 				</Flex>

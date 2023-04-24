@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import React from 'react';
 
 import { Flex } from '../../../shared/ui/atoms/flex';
@@ -17,4 +16,17 @@ export function Arrivals() {
 			</Flex>
 		</Flex>
 	);
+}
+
+export function Carousel() {
+	return <Flex />;
+}
+
+interface CardProps {
+	name: string;
+}
+export function Card(props: CardProps) {
+	const { name } = props;
+
+	return <Flex />;
 }
