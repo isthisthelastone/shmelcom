@@ -1,8 +1,12 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
-import React, { type ReactElement } from 'react';
+import React, { type ReactElement, useEffect } from 'react';
+
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 import styled from 'styled-components';
+import * as THREE from 'three';
 
 import { Flex } from '../../../shared/ui/atoms/flex';
 import {
@@ -61,8 +65,85 @@ export function WorldWide() {
 						</Flex>
 						<CountryInfo flag={<GermanFlag />} country="Potsdam, Germany" />
 					</Flex>
+					<EarthModel className="pt-[30px]" />
 				</Flex>
 			</Flex>
+		</Flex>
+	);
+}
+
+export function EarthModel(props: { className: string }) {
+	const { className } = props;
+
+	useEffect(() => {
+		const modelURL = new URL(
+			'../../../shared/assets/3dmodels/test.glb',
+			import.meta.url
+		);
+
+		const canvas = document.getElementById('kek') as HTMLCanvasElement;
+
+		const renderer = new THREE.WebGL1Renderer({
+			canvas,
+		});
+
+		renderer.setSize(600, 350);
+
+		const scene = new THREE.Scene();
+		scene.name = 'kek';
+		scene.background = new THREE.Color(0xffffff);
+
+		const camera = new THREE.PerspectiveCamera(
+			75,
+			window.innerWidth / window.innerHeight,
+			0.1,
+			1000
+		);
+
+		camera.position.set(0, 2, 5);
+
+		const assetLoader = new GLTFLoader();
+
+		const al = new THREE.AmbientLight(0xffffff, 0.8);
+		scene.add(al);
+
+		// Add some directional lights to properly light the model
+		const dl1 = new THREE.DirectionalLight(0xffffff, 0.5);
+		dl1.position.set(1, 1, 1);
+		scene.add(dl1);
+
+		const dl2 = new THREE.DirectionalLight(0xffffff, 0.5);
+		dl2.position.set(-1, -1, -1);
+		scene.add(dl2);
+
+		assetLoader.load(modelURL.href, (gltfScene) => {
+			scene.add(gltfScene.scene);
+
+			function animated() {
+				gltfScene.scene.rotateY(0.005);
+			}
+
+			renderer.setAnimationLoop(() => {
+				animated();
+				renderer.render(scene, camera);
+			});
+		});
+
+		renderer.setAnimationLoop(animate);
+
+		const orbit = new OrbitControls(camera, renderer.domElement);
+		orbit.update();
+
+		function animate() {
+			renderer.render(scene, camera);
+		}
+
+		renderer.render(scene, camera);
+	}, []);
+
+	return (
+		<Flex className={className}>
+			<canvas id="kek" />
 		</Flex>
 	);
 }

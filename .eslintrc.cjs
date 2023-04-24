@@ -10,7 +10,6 @@ module.exports = {
 				'airbnb',
 				'airbnb-typescript',
 				'airbnb/hooks',
-				'xo-typescript',
 				'plugin:prettier/recommended',
 			],
 			files: ['*.ts', '*.tsx'],
