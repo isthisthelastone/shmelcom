@@ -13,6 +13,7 @@ module.exports = {
 			main: '#3F3F3F',
 			black: '#000',
 			white: '#fff',
+			gray: '#707070',
 		},
 		extend: {},
 	},

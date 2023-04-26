@@ -14,6 +14,11 @@ import { ReactComponent as USAFlag } from './icons/usa-circular.svg';
 import { ReactComponent as ThaiFlag } from './icons/thailand-circular.svg';
 import { ReactComponent as IsraelFlag } from './icons/israel-circular.svg';
 import { ReactComponent as ShopIcon } from './icons/shop-icon.svg';
+import { ReactComponent as ShmelMonkeyR } from './icons/shmel-monkey-right.svg';
+import { ReactComponent as TelegramIcon } from './icons/telegram-circle.svg';
+import { ReactComponent as DiscordIcon } from './icons/discord-circle.svg';
+import { ReactComponent as VKIcon } from './icons/vk-circle.svg';
+import { ReactComponent as InstagramIcon } from './icons/instagram-circle.svg';
 
 export {
 	SearchIcon,
@@ -31,4 +36,9 @@ export {
 	ThaiFlag,
 	IsraelFlag,
 	ShopIcon,
+	ShmelMonkeyR,
+	TelegramIcon,
+	VKIcon,
+	DiscordIcon,
+	InstagramIcon,
 };
